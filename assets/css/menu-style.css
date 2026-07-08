@@ -1,0 +1,54 @@
+/* assets/css/menu-style.css */
+
+/* هذا الملف يحتوي على تنسيقات القائمة الجانبية (Hamburger Menu) فقط */
+
+@media (max-width: 768px) {
+    /* تنسيق حاوية الروابط لتصبح قائمة عمودية */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* تبدأ مخفية خارج الشاشة */
+        width: 250px;
+        height: 100vh;
+        background-color: var(--secondary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 6rem;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+        z-index: 99;
+    }
+
+    /* كلاس يتم إضافته عبر جافاسكريبت لإظهار القائمة */
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* تنسيق الروابط داخل القائمة */
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-links a {
+        color: var(--white-color);
+        font-size: 1.2rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: #4067c0;
+    }
+
+    /* تأثير X على أيقونة القائمة عند الفتح */
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

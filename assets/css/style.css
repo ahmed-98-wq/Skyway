@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+/* --- متغيرات الألوان والخطوط (CSS Variables) --- */
+:root {
+    --primary-color: #0A2463; /* أزرق داكن */
+    --secondary-color: #343A40;  /* رمادي غامق للنصوص */
+    --accent-color: #D9B44A; /* لون ذهبي/رملي */
+    --background-color: #F8F9FA; /* أبيض مائل للرمادي */
+    --white-color: #ffffff;
+    --main-font: 'Cairo', sans-serif;
+}
+
+/* --- إعادة تعيين الأنماط الأساسية (Reset) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: var(--main-font);
+    line-height: 1.7;
+    color: var(--secondary-color);
+    background-color: var(--background-color);
+    direction: rtl; /* تحديد اتجاه الصفحة */
+}
+
+/* --- تنسيقات عامة --- */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- الترويسة والشريط العلوي --- */
+.main-header {
+    background: var(--white-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 0.4rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 15px;
+}
+
+.nav-links a {
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* أيقونة القائمة (Hamburger) */
+.hamburger-menu {
+    display: none; /* تكون مخفية على الشاشات الكبيرة */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000; /* للتأكد من أنها فوق كل العناصر */
+}
+
+.hamburger-menu .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- قسم البطل (Hero) --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../images/skyway1.jpg') no-repeat center center/cover;
+    color: var(--white-color);
+    height: 100vh; /* جعل القسم يملأ الشاشة */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #081c4b;
+}
+
+/* زر ثانوي */
+.cta-button.secondary {
+    background-color: #1d9b71;
+    color: var(--white-color);
+}
+.cta-button.secondary:hover {
+    background-color: #197556;
+}
+
+/* --- قسم الخدمات / الرحلات --- */
+.featured-services {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: var(--white-color);
+}
+.featured-services h2 {
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.service-card {
+    background: var(--white-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    /* توحيد الانتقالات هنا لتعمل مع الأنيميشن والتحويم */
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out, box-shadow 0.3s ease;
+}
+.service-card:hover {
+    /* نستخدم transform: translateY(-10px) مع الحفاظ على القيمة الحالية للتحريك الأفقي */
+    /* هذا يمنع التعارض مع أنيميشن الظهور */
+    transform: translateY(-10px) translateX(var(--tw-translate-x, 0));
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.service-card h3 {
+    color: var(--primary-color);
+    margin: 1.5rem 0 0.5rem;
+}
+.service-card p {
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* --- أنماط الأنيميشن للبطاقات --- */
+/* الحالة الأولية للبطاقات (مخفية) */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px); /* تبدأ من الأسفل قليلاً */
+    transition: all 0.5s ease-out;
+}
+
+/* حالة الظهور عند التمرير (عند إضافة كلاس .active) */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تعديل تأثير التحويم ليعمل مع الأنيميشن الجديد */
+.service-card:hover {
+    /* نرفع البطاقة للأعلى عند التحويم */
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* التأكد من أن تأثير التحويم يعمل بشكل صحيح بعد ظهور البطاقة */
+.reveal.active:hover {
+    transform: translateY(-10px);
+}
+
+/* --- التذييل (Footer) --- */
+.main-footer {
+    background: var(--secondary-color);
+    color: var(--white-color);
+    padding-top: 4rem;
+    margin-top: 3rem;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.footer-brand .footer-logo {
+    height: 50px;
+    margin-bottom: 1rem;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.brand-description {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #ccc;
+    max-width: 300px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.footer-social a {
+    color: #ccc;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--white-color);
+    transform: scale(1.1);
+}
+
+/* --- تلوين أيقونات التواصل الاجتماعي --- */
+.footer-social a[aria-label="Facebook"] {
+    color: #1877F2; /* لون فيسبوك الرسمي */
+}
+.footer-social a[aria-label="Facebook"]:hover {
+    color: #4a9aff;
+}
+.footer-social a[aria-label="WhatsApp"] {
+    color: #25D366; /* لون واتساب الرسمي */
+}
+.footer-social a[aria-label="WhatsApp"]:hover {
+    color: #40f780;
+}
+
+/* --- تلوين أيقونات معلومات التواصل --- */
+.contact-item[href^="tel:"] svg {
+    stroke: #3498db; /* أزرق */
+}
+.contact-item[href^="mailto:"] svg {
+    stroke: #e74c3c; /* أحمر */
+}
+.location-item svg {
+    stroke: #f1c40f; /* أصفر */
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer-links a,
+.contact-item {
+    display: block;
+    color: #ccc;
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.contact-item:hover {
+    color: var(--white-color);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item svg {
+    flex-shrink: 0;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* --- صفحة التواصل --- */
+.page-header {
+    background: var(--white-color);
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.contact-form-section {
+    padding: 5rem 2rem;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form {
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--main-font);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* --- نبذة عنا (Snippet) --- */
+.about-snippet {
+    background: var(--white-color);
+    text-align: center;
+    padding: 5rem 2rem;
+}
+.about-snippet h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.about-snippet p {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.8;
+}
+
+/* --- معرض الصور --- */
+.portfolio-gallery {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.portfolio-gallery h2 {
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* --- التجاوب مع الشاشات (Responsive Design) --- */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex; /* إظهار الأيقونة على الشاشات الصغيرة */
+    } 
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .featured-services h2,
+    .about-snippet h2,
+    .portfolio-gallery h2 {
+        font-size: 1.8rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* توسيط محتوى الفوتر على الموبايل */
+    .footer-brand, .footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-item {
+        justify-content: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    /* --- تعديلات معرض الصور ليصبح سلايدر على الموبايل --- */
+    .gallery-grid {
+        display: flex;
+        overflow-x: auto; /* تفعيل التمرير الأفقي */
+        scroll-snap-type: x mandatory; /* لجعل التمرير ينجذب للصور */
+        scroll-behavior: smooth; /* لتمرير سلس عبر جافاسكريبت */
+        -webkit-overflow-scrolling: touch; /* تحسين التمرير على أجهزة أبل */
+        padding-bottom: 1rem; /* مساحة إضافية بالأسفل */
+        gap: 1rem;
+    }
+
+    /* إخفاء شريط التمرير */
+    .gallery-grid::-webkit-scrollbar {
+        display: none;
+    }
+    .gallery-grid {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .gallery-grid img {
+        flex: 0 0 90%; /* كل صورة تأخذ 90% من عرض الحاوية */
+        height: 200px;
+        scroll-snap-align: center; /* محاذاة الصورة في المنتصف عند التمرير */
+    }
+}
