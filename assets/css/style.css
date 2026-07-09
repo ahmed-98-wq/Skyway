@@ -124,11 +124,17 @@ ul {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    /* أنيميشن الظهور */
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    /* أنيميشن الظهور مع تأخير */
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
 }
 
 .cta-button {
@@ -139,6 +145,44 @@ ul {
     font-weight: bold;
     transition: background 0.3s ease;
 }
+
+.hero .cta-button {
+    /* أنيميشن الظهور مع تأخير إضافي */
+    animation: fadeInUp 0.8s ease-out 1s forwards;
+    opacity: 0;
+}
+
+.hero-social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+    /* تطبيق أنيميشن الطفو والظهور */
+    animation: floatAnimation 2.5s ease-in-out infinite, fadeInUp 0.3s ease-out 1.4s forwards;
+    opacity: 0;
+}
+
+.hero-social-icons a {
+    color: var(--white-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* .hero-social-icons a svg {
+    width: 28px;
+    height: 28px;
+} */
+
+.hero-social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* تلوين أيقونات التواصل في قسم البداية */
+.hero-social-icons a[aria-label="Facebook"] { color: #1877F2; }
+.hero-social-icons a[aria-label="WhatsApp"] { color: #25D366; }
+.hero-social-icons a[aria-label="Call"] { color: #cac04d; }
+
+.hero-social-icons a[aria-label="Facebook"]:hover { color: #4a9aff; }
+.hero-social-icons a[aria-label="WhatsApp"]:hover { color: #40f780; }
+.hero-social-icons a[aria-label="Call"]:hover { color: #e6d856; }
 
 .cta-button:hover {
     background: #081c4b;
@@ -181,12 +225,6 @@ ul {
     /* توحيد الانتقالات هنا لتعمل مع الأنيميشن والتحويم */
     transition: transform 0.8s ease-out, opacity 0.8s ease-out, box-shadow 0.3s ease;
 }
-.service-card:hover {
-    /* نستخدم transform: translateY(-10px) مع الحفاظ على القيمة الحالية للتحريك الأفقي */
-    /* هذا يمنع التعارض مع أنيميشن الظهور */
-    transform: translateY(-10px) translateX(var(--tw-translate-x, 0));
-    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
-}
 .service-card img {
     width: 100%;
     height: 200px;
@@ -213,6 +251,31 @@ ul {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- أنيميشن الظهور لقسم البطل (Hero) --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- أنيميشن الطفو للأيقونات --- */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* تعديل تأثير التحويم ليعمل مع الأنيميشن الجديد */
@@ -390,7 +453,8 @@ ul {
 .about-snippet {
     background: var(--white-color);
     text-align: center;
-    padding: 5rem 2rem;
+    align-items: center;
+    padding: 10rem 2rem;
 }
 .about-snippet h2 {
     margin-bottom: 1.5rem;
@@ -399,9 +463,14 @@ ul {
 }
 .about-snippet p {
     max-width: 800px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 5rem auto;
     line-height: 1.8;
 }
+
+/* تأخير ظهور عناصر "نبذة عنا" بشكل متدرج */
+.about-snippet h2.reveal { transition-delay: 0.1s; }
+.about-snippet p.reveal { transition-delay: 0.3s; }
+.about-snippet a.reveal { transition-delay: 0.5s; }
 
 /* --- معرض الصور --- */
 .portfolio-gallery {
@@ -431,6 +500,55 @@ ul {
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
+
+/* --- قسم الخدمات السريعة --- */
+.quick-services {
+    padding: 10rem 2rem;
+    text-align: center;
+    align-items: center;
+}
+
+.quick-services h2 {
+    margin-bottom: 2.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.quick-services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.quick-service-item {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(10, 36, 99, 0.1);
+    transition: all 0.3s ease;
+}
+
+.quick-service-item:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(10, 36, 99, 0.2);
+}
+
+/* تأخير ظهور العناصر بشكل متدرج */
+.quick-services-grid .reveal:nth-child(1) { transition-delay: 0.1s; }
+.quick-services-grid .reveal:nth-child(2) { transition-delay: 0.2s; }
+.quick-services-grid .reveal:nth-child(3) { transition-delay: 0.3s; }
+.quick-services-grid .reveal:nth-child(4) { transition-delay: 0.4s; }
+.quick-services-grid .reveal:nth-child(5) { transition-delay: 0.5s; }
 
 /* --- التجاوب مع الشاشات (Responsive Design) --- */
 @media (max-width: 768px) {
