@@ -85,12 +85,17 @@ ul {
     color: var(--primary-color);
 }
 
+/* إخفاء أيقونات التواصل في القائمة على الشاشات الكبيرة */
+.nav-social-mobile {
+    display: none;
+}
+
 /* أيقونة القائمة (Hamburger) */
 .hamburger-menu {
     display: none; /* تكون مخفية على الشاشات الكبيرة */
     flex-direction: column;
     justify-content: space-around;
-    width: 30px;
+    width: 25px;
     height: 25px;
     background: transparent;
     border: none;
@@ -109,7 +114,7 @@ ul {
 
 /* --- قسم البطل (Hero) --- */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../images/skyway1.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('../images/skyway1.jpg') no-repeat center center/cover;
     color: var(--white-color);
     height: 100vh; /* جعل القسم يملأ الشاشة */
     display: flex;
@@ -227,7 +232,7 @@ ul {
 }
 .service-card img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
 }
 .service-card h3 {
@@ -409,44 +414,93 @@ ul {
 
 .contact-form-section {
     padding: 5rem 2rem;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    background-color: var(--white-color);
+}
+
+.contact-form-section .page-header {
+    background: transparent;
+    border: none;
+    padding-bottom: 2rem;
 }
 
 .contact-form {
     background: var(--white-color);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1rem;
+    color: #888;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    height: 100px;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
     font-family: var(--main-font);
+    font-size: 1rem;
+    background-color: var(--background-color);
+    transition: border-color 0.3s ease;
+}
+
+/* تأثير الليبل العائم */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    right: 10px;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    background-color: var(--white-color);
+    padding: 0 5px;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(10, 36, 99, 0.2);
+}
+
+.form-button {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.rem;
+    font-family: var(--main-font);
+}
+
+.form-button:hover {
+    background: #081c4b;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(10, 36, 99, 0.3);
 }
 
 /* --- نبذة عنا (Snippet) --- */
@@ -550,11 +604,21 @@ ul {
 .quick-services-grid .reveal:nth-child(4) { transition-delay: 0.4s; }
 .quick-services-grid .reveal:nth-child(5) { transition-delay: 0.5s; }
 
+/* --- تحسينات التنقل (Anchor Links) --- */
+/* إضافة هامش علوي عند الانتقال للقسم لتجنب تغطيته بالقائمة العلوية */
+#offer, #featured-trips, #about, #contact {
+    scroll-margin-top: 70px; /* قيمة تقريبية لارتفاع الهيدر */
+}
+
 /* --- التجاوب مع الشاشات (Responsive Design) --- */
 @media (max-width: 768px) {
     .hamburger-menu {
         display: flex; /* إظهار الأيقونة على الشاشات الصغيرة */
     } 
+
+    .navbar {
+        position: relative; /* ضروري لتحديد موضع القائمة المنسدلة */
+    }
 
     .hero h1 {
         font-size: 2.2rem;

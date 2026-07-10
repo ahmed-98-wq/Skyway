@@ -5,40 +5,77 @@
 @media (max-width: 768px) {
     /* تنسيق حاوية الروابط لتصبح قائمة عمودية */
     .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%; /* تبدأ مخفية خارج الشاشة */
-        width: 250px;
-        height: 100vh;
+        position: absolute; /* تتمركز بالنسبة للـ .navbar */
+        top: 100%; /* تظهر تحت الـ navbar مباشرة */
+        left: 0;
+        width: 100%;
         background-color: var(--secondary-color);
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        padding-top: 6rem;
-        transition: right 0.4s ease-in-out;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+
+        /* إخفاء القائمة افتراضياً */
+        max-height: 0;
+        overflow: hidden;
+
+        /* تأثير الظهور */
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         z-index: 99;
     }
 
     /* كلاس يتم إضافته عبر جافاسكريبت لإظهار القائمة */
     .nav-links.active {
-        right: 0;
+        max-height: 1500px; /* قيمة كبيرة كافية لإظهار كل الروابط */
     }
 
     /* تنسيق الروابط داخل القائمة */
     .nav-links li {
-        margin: 1.5rem 0;
+        width: 100%;
+        text-align: center;
     }
 
     .nav-links a {
         color: var(--white-color);
-        font-size: 1.2rem;
+        font-size: 0.9rem;
+        display: block;
+        padding: 1rem;
+        /* border-bottom: 1px solid #4a4a4a; */
+    }
+
+    /* إظهار وتنسيق حاوية الأيقونات داخل القائمة المنسدلة */
+    .nav-links .nav-social-mobile {
+        display: flex; /* Use flexbox for alignment */
+        justify-content: center;
+        gap: 2.5rem;
+        width: 100%;
+        padding: 1rem 0;
+        margin-top: 0.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2); /* الخط الفاصل الأبيض */
+    }
+
+    /* تخصيص روابط الأيقونات لإلغاء بعض الأنماط الموروثة */
+    .nav-social-mobile a {
+        padding: 0; /* إلغاء الحشو */
+        border-bottom: none; /* إلغاء الخط السفلي */
+        transition: transform 0.3s ease;
+        color: white; /* لون مبدئي للأيقونات */
+    }
+
+    /* تخصيص تأثير التحويم على الأيقونات */
+    .nav-social-mobile a:hover {
+        background-color: transparent; /* إلغاء لون الخلفية عند التحويم */
+        transform: scale(1.15);
+    }
+
+    .nav-links li:last-child a {
+        border-bottom: none;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-        color: #4067c0;
+        color: var(--accent-color);
+        background-color: #444;
     }
 
     /* تأثير X على أيقونة القائمة عند الفتح */
