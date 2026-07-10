@@ -25,7 +25,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#home" class="">الرئيسية</a></li>
-                <li><a href="#offer">ما نوفره</a></li>
+                <li><a href="offers.html">العروض</a></li>
                 <li><a href="#featured-trips">خدماتنا</a></li>
                 <li><a href="#about">من نحن</a></li>
                 <li><a href="#contact">تواصل معنا</a></li>
@@ -35,7 +35,7 @@
                 </li>
             </ul>
             <!-- أيقونة القائمة (Hamburger) -->
-            <button class="hamburger-menu" aria-label="Toggle navigation">
+            <button class="hamburger-menu" type="button" aria-label="فتح قائمة التنقل" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -91,6 +91,17 @@
                 </a>
             </div>
         </section>
+        <section class="why-choose-us" aria-labelledby="why-choose-title">
+            <div class="section-intro reveal">
+                <h2 id="why-choose-title">لماذا تختار سكاي واي؟</h2>
+                <p>نرافقك من أول استفسار حتى اكتمال إجراءات سفرك.</p>
+            </div>
+            <div class="trust-grid">
+                <article class="trust-card reveal"><span class="trust-icon" aria-hidden="true">✓</span><h3>متابعة واضحة</h3><p>نوضح لك المتطلبات والخطوات اللازمة قبل البدء في إجراءاتك.</p></article>
+                <article class="trust-card reveal"><span class="trust-icon" aria-hidden="true">✈</span><h3>خدمات متكاملة</h3><p>تذاكر طيران، حجوزات فندقية، وتأشيرات في مكان واحد.</p></article>
+                <article class="trust-card reveal"><span class="trust-icon" aria-hidden="true">⌁</span><h3>تواصل سريع</h3><p>تواصل معنا عبر واتساب لتحصل على إجابة مبدئية بسرعة.</p></article>
+            </div>
+        </section>
         <!-- قسم الخدمات السريعة -->
         <section id="offer" class="quick-services">
             <h2 class="reveal">ما نوفره</h2>
@@ -108,20 +119,23 @@
             <h2>خدماتنا المتكاملة</h2>
             <div class="services-grid">
                 <div class="service-card reveal">
-                    <img src="assets/images/ti1.png" alt="حجز تذاكر طيران">
+                    <img src="assets/images/ti1.png" alt="حجز تذاكر طيران" width="3500" height="3500" loading="lazy" decoding="async">
                     <h3>حجز تذاكر الطيران</h3>
                     <p>نوفر لك أفضل أسعار تذاكر الطيران لمختلف الوجهات العالمية مع خيارات متعددة تناسب ميزانيتك.</p>
+                    <a class="service-inquiry" href="https://wa.me/256794747777?text=أرغب%20في%20الاستفسار%20عن%20إحدى%20خدمات%20سكاي%20واي" target="_blank" rel="noopener noreferrer">استفسر عبر واتساب</a>
                 </div>
                 <div class="service-card reveal">
-                    <img src="assets/images/sky-3.png" alt="تسهيلات السفر لمصر والسعودية">
+                    <img src="assets/images/sky-3.png" alt="تسهيلات السفر لمصر والسعودية" width="1200" height="1200" loading="lazy" decoding="async">
                     <h3>تسهيلات السفر لمصر والسعودية</h3>
                     <p>نقدم خدمة استخراج الموافقات الأمنية لدخول مصر، ونكمل كافة إجراءات السفر للمملكة العربية السعودية.
                     </p>
+                    <a class="service-inquiry" href="https://wa.me/256794747777?text=أرغب%20في%20الاستفسار%20عن%20إحدى%20خدمات%20سكاي%20واي" target="_blank" rel="noopener noreferrer">استفسر عبر واتساب</a>
                 </div>
                 <div class="service-card reveal">
-                    <img src="assets/images/ho1.png" alt="حجوزات فندقية">
+                    <img src="assets/images/ho1.png" alt="حجوزات فندقية" width="536" height="500" loading="lazy" decoding="async">
                     <h3>حجوزات فندقية فاخرة</h3>
                     <p>نضمن لك إقامة مريحة عبر شبكتنا الواسعة من الفنادق والمنتجعات حول العالم بأسعار تنافسية.</p>
+                    <a class="service-inquiry" href="https://wa.me/256794747777?text=أرغب%20في%20الاستفسار%20عن%20إحدى%20خدمات%20سكاي%20واي" target="_blank" rel="noopener noreferrer">استفسر عبر واتساب</a>
                 </div>
             </div>
         </section>
@@ -138,10 +152,10 @@
         <section class="portfolio-gallery">
             <h2>وجهاتنا</h2>
             <div class="gallery-grid">
-                <img src="assets/images/saudi.jpg" alt="وجهة سياحية 1">
-                <img src="assets/images/india.jpg" alt="وجهة سياحية 2">
-                <img src="assets/images/uae.jpg" alt="وجهة سياحية 3">
-                <img src="assets/images/egypt.jpg" alt="وجهة سياحية 4">
+                <img src="assets/images/saudi.jpg" alt="السعودية" width="540" height="810" loading="lazy" decoding="async">
+                <img src="assets/images/india.jpg" alt="الهند" width="736" height="1308" loading="lazy" decoding="async">
+                <img src="assets/images/uae.jpg" alt="الإمارات العربية المتحدة" width="736" height="1307" loading="lazy" decoding="async">
+                <img src="assets/images/egypt.jpg" alt="مصر" width="360" height="640" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -151,14 +165,24 @@
                 <h2>تواصل معنا</h2>
                 <p>نحن هنا لمساعدتك. املأ النموذج أدناه وسنعاود الاتصال بك قريبًا.</p>
             </div>
-            <form class="contact-form" action="https://formsubmit.co/ahcinbox1@gmail.com" method="POST" autocomplete="off">
+            <form class="contact-form" action="https://formsubmit.co/ahcinbox1@gmail.com" method="POST">
                 <div class="form-group">
-                    <input type="text" id="name" name="name" required placeholder=" ">
+                    <input type="text" id="name" name="name" required placeholder=" " autocomplete="name">
                     <label for="name">الاسم الكامل</label>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email" name="email" required placeholder=" ">
+                    <input type="email" id="email" name="email" required placeholder=" " autocomplete="email">
                     <label for="email">البريد الإلكتروني</label>
+                </div>                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" required placeholder=" " autocomplete="tel" inputmode="tel">
+                    <label for="phone">رقم الهاتف أو واتساب</label>
+                </div>
+                <div class="form-group select-group">
+                    <label class="form-label" for="service">الخدمة المطلوبة</label>
+                    <select id="service" name="service" required>
+                        <option value="" selected disabled>اختر الخدمة</option>
+                        <option value="تأشيرة">تأشيرة</option><option value="تذاكر طيران">تذاكر طيران</option><option value="حجز فندقي">حجز فندقي</option><option value="تسهيلات سفر">تسهيلات سفر</option><option value="أخرى">خدمة أخرى</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
@@ -201,7 +225,7 @@
             <nav class="footer-links">
                 <h4>روابط سريعة</h4>
                 <a href="index.html">الرئيسية</a>
-                <a href="#offer">ما نوفره</a>
+                <a href="offers.html">العروض</a>
                 <a href="#featured-trips">خدماتنا</a>
                 <a href="about.html">من نحن</a>
                 <a href="#contact">تواصل معنا</a>
@@ -237,9 +261,10 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 سكاي واي للسفر. جميع الحقوق محفوظة.</p>
+            <p>&copy; 2026 سكاي واي للسفر. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
+    <a class="floating-whatsapp" href="https://wa.me/256794747777?text=مرحبًا،%20أرغب%20في%20الاستفسار%20عن%20خدمات%20سكاي%20واي" target="_blank" rel="noopener noreferrer" aria-label="تواصل معنا عبر واتساب"><span aria-hidden="true">☏</span><span>واتساب</span></a>
 
     <!-- ربط ملف جافاسكريبت الرئيسي (قبل إغلاق الـ body لتحسين الأداء) -->
     <script src="assets/js/main.js"></script>

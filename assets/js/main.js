@@ -7,16 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li a');
 
+    if (!hamburger || !navLinks) {
+        return;
+    }
+
+    function setMenuState(isOpen) {
+        navLinks.classList.toggle('active', isOpen);
+        hamburger.classList.toggle('active', isOpen);
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        hamburger.setAttribute('aria-label', isOpen ? 'إغلاق قائمة التنقل' : 'فتح قائمة التنقل');
+    }
+
     function closeMenu() {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('active');
+        setMenuState(false);
     }
 
     hamburger.addEventListener('click', () => {
         // تفعيل/إلغاء تفعيل القائمة
-        navLinks.classList.toggle('active');
-        // تفعيل/إلغاء تفعيل شكل أيقونة الإغلاق (X)
-        hamburger.classList.toggle('active');
+        setMenuState(!navLinks.classList.contains('active'));
     });
 
     // إغلاق القائمة عند النقر على أحد الروابط
