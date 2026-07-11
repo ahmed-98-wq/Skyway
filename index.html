@@ -17,6 +17,16 @@
 
 <body>
 
+    <!-- شاشة التحميل -->
+    <div class="preloader" aria-hidden="true">
+        <svg class="preloader-plane" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2.5 1.5V22l4-1.5 4 1.5v-1.5L13 19v-5.5l8 2.5z"/>
+        </svg>
+    </div>
+
+    <!-- شريط تقدم التمرير -->
+    <div class="scroll-progress"></div>
+
     <!-- قسم الترويسة (الهيدر) -->
     <header class="main-header">
         <nav class="navbar">
@@ -106,11 +116,26 @@
         <section id="offer" class="quick-services">
             <h2 class="reveal">ما نوفره</h2>
             <div class="quick-services-grid">
-                <div class="quick-service-item reveal">فيزا اوغندا</div>
-                <div class="quick-service-item reveal">فيزا اثيوبيا</div>
-                <div class="quick-service-item reveal">فيزا جنوب السودان</div>
-                <div class="quick-service-item reveal">فيزا تشاد</div>
-                <div class="quick-service-item reveal">موافقات امنية مصر، ليبيا</div>
+                <div class="quick-service-item reveal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M15 8h4M15 12h4M5 16h14"></path></svg>
+                    فيزا اوغندا
+                </div>
+                <div class="quick-service-item reveal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M15 8h4M15 12h4M5 16h14"></path></svg>
+                    فيزا اثيوبيا
+                </div>
+                <div class="quick-service-item reveal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M15 8h4M15 12h4M5 16h14"></path></svg>
+                    فيزا جنوب السودان
+                </div>
+                <div class="quick-service-item reveal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M15 8h4M15 12h4M5 16h14"></path></svg>
+                    فيزا تشاد
+                </div>
+                <div class="quick-service-item reveal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"></path><path d="M9 12l2 2 4-4"></path></svg>
+                    موافقات امنية مصر، ليبيا
+                </div>
             </div>
         </section>
 
@@ -119,20 +144,35 @@
             <h2>خدماتنا المتكاملة</h2>
             <div class="services-grid">
                 <div class="service-card reveal">
-                    <img src="assets/images/ti1.png" alt="حجز تذاكر طيران" width="3500" height="3500" loading="lazy" decoding="async">
+                    <div class="service-img-wrap">
+                        <img src="assets/images/ti1.png" alt="حجز تذاكر طيران" width="3500" height="3500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="service-icon-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2.5 1.5V22l4-1.5 4 1.5v-1.5L13 19v-5.5l8 2.5z"/></svg>
+                    </div>
                     <h3>حجز تذاكر الطيران</h3>
                     <p>نوفر لك أفضل أسعار تذاكر الطيران لمختلف الوجهات العالمية مع خيارات متعددة تناسب ميزانيتك.</p>
                     <a class="service-inquiry" href="https://wa.me/256794747777?text=أرغب%20في%20الاستفسار%20عن%20إحدى%20خدمات%20سكاي%20واي" target="_blank" rel="noopener noreferrer">استفسر عبر واتساب</a>
                 </div>
                 <div class="service-card reveal">
-                    <img src="assets/images/sky-3.png" alt="تسهيلات السفر لمصر والسعودية" width="1200" height="1200" loading="lazy" decoding="async">
+                    <div class="service-img-wrap">
+                        <img src="assets/images/sky-3.png" alt="تسهيلات السفر لمصر والسعودية" width="1200" height="1200" loading="lazy" decoding="async">
+                    </div>
+                    <div class="service-icon-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M15 8h4M15 12h4M5 16h14"></path></svg>
+                    </div>
                     <h3>تسهيلات السفر لمصر والسعودية</h3>
                     <p>نقدم خدمة استخراج الموافقات الأمنية لدخول مصر، ونكمل كافة إجراءات السفر للمملكة العربية السعودية.
                     </p>
                     <a class="service-inquiry" href="https://wa.me/256794747777?text=أرغب%20في%20الاستفسار%20عن%20إحدى%20خدمات%20سكاي%20واي" target="_blank" rel="noopener noreferrer">استفسر عبر واتساب</a>
                 </div>
                 <div class="service-card reveal">
-                    <img src="assets/images/ho1.png" alt="حجوزات فندقية" width="536" height="500" loading="lazy" decoding="async">
+                    <div class="service-img-wrap">
+                        <img src="assets/images/ho1.png" alt="حجوزات فندقية" width="536" height="500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="service-icon-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12"></path><path d="M9 21v-6h6v6"></path></svg>
+                    </div>
                     <h3>حجوزات فندقية فاخرة</h3>
                     <p>نضمن لك إقامة مريحة عبر شبكتنا الواسعة من الفنادق والمنتجعات حول العالم بأسعار تنافسية.</p>
                     <a class="service-inquiry" href="https://wa.me/256794747777?text=أرغب%20في%20الاستفسار%20عن%20إحدى%20خدمات%20سكاي%20واي" target="_blank" rel="noopener noreferrer">استفسر عبر واتساب</a>
@@ -265,6 +305,14 @@
         </div>
     </footer>
     <a class="floating-whatsapp" href="https://wa.me/256794747777?text=مرحبًا،%20أرغب%20في%20الاستفسار%20عن%20خدمات%20سكاي%20واي" target="_blank" rel="noopener noreferrer" aria-label="تواصل معنا عبر واتساب"><span aria-hidden="true">☏</span><span>واتساب</span></a>
+
+    <!-- زر العودة إلى الأعلى -->
+    <button class="back-to-top" aria-label="العودة للأعلى">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5"></path>
+            <path d="M5 12l7-7 7 7"></path>
+        </svg>
+    </button>
 
     <!-- ربط ملف جافاسكريبت الرئيسي (قبل إغلاق الـ body لتحسين الأداء) -->
     <script src="assets/js/main.js"></script>
