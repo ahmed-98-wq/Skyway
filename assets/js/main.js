@@ -78,5 +78,37 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // --- أكورديون الأسئلة الشائعة (FAQ) ---
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item) => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        if (!question || !answer) return;
+
+        question.addEventListener('click', () => {
+            const isOpen = item.classList.contains('faq-open');
+
+            // إغلاق باقي الأسئلة المفتوحة (دون المساس بكلاس "active" الخاص بأنيميشن الظهور)
+            faqItems.forEach((otherItem) => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('faq-open');
+                    otherItem.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    if (otherAnswer) otherAnswer.style.maxHeight = null;
+                }
+            });
+
+            if (isOpen) {
+                item.classList.remove('faq-open');
+                question.setAttribute('aria-expanded', 'false');
+                answer.style.maxHeight = null;
+            } else {
+                item.classList.add('faq-open');
+                question.setAttribute('aria-expanded', 'true');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
 });
 
