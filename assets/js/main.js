@@ -51,12 +51,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainHeader = document.querySelector('.main-header');
     const scrollProgress = document.querySelector('.scroll-progress');
     const backToTop = document.querySelector('.back-to-top');
+    let headerIsScrolled = false;
+    let ticking = false;
 
-    function handleScrollEffects() {
+    function applyScrollEffects() {
         const scrollY = window.scrollY || document.documentElement.scrollTop;
 
+        // نستخدم منطقتين مختلفتين للتفعيل والإلغاء (Hysteresis) بدل حد واحد،
+        // حتى لا يتذبذب الهيدر عند توقف التمرير قرب نقطة الحد
         if (mainHeader) {
-            mainHeader.classList.toggle('scrolled', scrollY > 30);
+            if (!headerIsScrolled && scrollY > 60) {
+                headerIsScrolled = true;
+                mainHeader.classList.add('scrolled');
+            } else if (headerIsScrolled && scrollY < 25) {
+                headerIsScrolled = false;
+                mainHeader.classList.remove('scrolled');
+            }
         }
 
         if (scrollProgress) {
@@ -68,10 +78,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (backToTop) {
             backToTop.classList.toggle('show', scrollY > 400);
         }
+
+        ticking = false;
+    }
+
+    function handleScrollEffects() {
+        // نؤجل التنفيذ إلى الإطار التالي (requestAnimationFrame) لتفادي التكرار
+        // المفرط لحدث scroll ومنع أي رجفة بصرية أثناء التمرير
+        if (!ticking) {
+            ticking = true;
+            window.requestAnimationFrame(applyScrollEffects);
+        }
     }
 
     window.addEventListener('scroll', handleScrollEffects, { passive: true });
-    handleScrollEffects();
+    applyScrollEffects();
 
     if (backToTop) {
         backToTop.addEventListener('click', () => {

@@ -72,6 +72,14 @@
         border-bottom: none;
     }
 
+    /* دفع زر تغيير اللغة إلى أسفل القائمة المنسدلة على الموبايل فقط (لا يؤثر على شكل سطح المكتب) */
+    .nav-links .nav-lang-item {
+        order: 10;
+        padding: 1.2rem 0 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 0.5rem;
+    }
+
     .nav-links a:hover,
     .nav-links a.active {
         color: var(--accent-color);

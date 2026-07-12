@@ -89,19 +89,24 @@
     <!-- قسم الترويسة (الهيدر) -->
     <header class="main-header">
         <nav class="navbar">
-            <a href="#home" class="logo">
+            <a href="#home" class="logo logo-mobile-only">
                 <img src="assets/images/logo2.png" alt="شعار سكاي واي للسفر">
             </a>
             <ul class="nav-links">
+                <li class="nav-lang-item"><a href="en/index.html" class="lang-switch">EN</a></li>
                 <li><a href="#home" class="">الرئيسية</a></li>
                 <li><a href="offers.html">العروض</a></li>
                 <li><a href="#featured-trips">خدماتنا</a></li>
                 <li><a href="#about">من نحن</a></li>
                 <li><a href="#contact">تواصل معنا</a></li>
-                <li><a href="en/index.html" class="lang-switch">EN</a></li>
                 <li class="nav-social-mobile">
                     <a href="https://www.facebook.com/share/1LJ4h5y8WU/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
                     <a href="https://wa.me/256794747777" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.847 6.061l-1.219 4.446 4.62-1.217z"/></svg></a>
+                </li>
+                <li class="nav-logo-item">
+                    <a href="#home" class="logo">
+                        <img src="assets/images/logo2.png" alt="شعار سكاي واي للسفر">
+                    </a>
                 </li>
             </ul>
             <!-- أيقونة القائمة (Hamburger) -->
@@ -178,23 +183,23 @@
             <div class="quick-services-grid">
                 <div class="quick-service-item reveal">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M15 8h4M15 12h4M5 16h14"></path></svg>
-                    فيزا اوغندا
+                    تأشيرة اوغندا
                 </div>
                 <div class="quick-service-item reveal">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M15 8h4M15 12h4M5 16h14"></path></svg>
-                    فيزا اثيوبيا
+                    تأشيرة اثيوبيا
                 </div>
                 <div class="quick-service-item reveal">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M15 8h4M15 12h4M5 16h14"></path></svg>
-                    فيزا جنوب السودان
+                    تأشيرة جنوب السودان
                 </div>
                 <div class="quick-service-item reveal">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M15 8h4M15 12h4M5 16h14"></path></svg>
-                    فيزا تشاد
+                    تأشيرة تشاد
                 </div>
                 <div class="quick-service-item reveal">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"></path><path d="M9 12l2 2 4-4"></path></svg>
-                    موافقات امنية مصر، ليبيا
+                    موافقات امنية مصر، وغيرها
                 </div>
             </div>
         </section>
@@ -243,19 +248,20 @@
         <!-- نبذة عنا -->
         <section id="about" class="about-snippet">
             <h2 class="reveal">من نحن ؟</h2>
-            <p class="reveal"> نحن في سكاي واي للسفر نصنع ذكريات لا تُنسى لعملائنا. فريقنا من الخبراء حول العالم يختار
+            <p class="reveal"> نحن في سكاي واي للسفر نصنع ذكريات لا تُنسى لعملائنا. فريقنا من الخبراء يختار
                 لك أفضل الوجهات والتجارب التي تليق بك. نحن نؤمن بأن السفر هو أكثر من مجرد انتقال، بل هو قصة ترويها.</p>
             <a href="about.html" class="cta-button secondary reveal">المزيد عنا</a>
         </section>
 
-        <!-- معرض الصور (وجهاتنا) -->
+        <!-- معرض الصور (اسباب) -->
         <section class="portfolio-gallery">
-            <h2>وجهاتنا</h2>
+            <h2> اسباب لإختيار سكاي واي</h2>
             <div class="gallery-grid">
-                <img src="assets/images/saudi.jpg" alt="السعودية" width="540" height="810" loading="lazy" decoding="async">
-                <img src="assets/images/india.jpg" alt="الهند" width="736" height="1308" loading="lazy" decoding="async">
-                <img src="assets/images/uae.jpg" alt="الإمارات العربية المتحدة" width="736" height="1307" loading="lazy" decoding="async">
-                <img src="assets/images/egypt.jpg" alt="مصر" width="360" height="640" loading="lazy" decoding="async">
+                <img src="assets/images/res.png" alt="السبب 1" width="540" height="810" loading="lazy" decoding="async">
+                <img src="assets/images/res1.png" alt="السبب 1" width="540" height="810" loading="lazy" decoding="async">
+                <img src="assets/images/res2.png" alt="السبب 2" width="736" height="1308" loading="lazy" decoding="async">
+                <img src="assets/images/res3.png" alt="السبب 3" width="736" height="1307" loading="lazy" decoding="async">
+                <img src="assets/images/res4.png" alt="السبب 4" width="360" height="640" loading="lazy" decoding="async">
             </div>
         </section>
 
