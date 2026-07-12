@@ -637,6 +637,15 @@ ul {
     color: #aaa;
 }
 
+.footer-bottom a {
+    color: #ccc;
+    transition: color 0.3s var(--ease-smooth);
+}
+
+.footer-bottom a:hover {
+    color: var(--accent-color);
+}
+
 /* --- رأس الصفحات الداخلية (مثل "من نحن") --- */
 .page-header {
     position: relative;
@@ -992,7 +1001,7 @@ ul {
     }
 
     /* على الشاشات الصغيرة جدًا نرجع لعمود واحد لسهولة القراءة */
-    @media (max-width: 375px) {
+    @media (max-width: 420px) {
         .footer-container {
             grid-template-columns: 1fr;
         }
@@ -1080,6 +1089,17 @@ ul {
 @media (max-width: 768px) { .gallery-grid { padding-bottom: 1rem; } .gallery-grid img { flex-basis: 88%; height: 200px; } }
 /* صفحة العروض */
 .offers-hero { min-height: 48vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 6rem 2rem; text-align: center; color: var(--white-color); background: linear-gradient(rgba(10,36,99,.84), rgba(10,36,99,.7)), url('../images/skyway1.jpg') center/cover; }.offers-hero h1 { max-width: 760px; margin: .5rem 0 1rem; font-size: clamp(2rem, 5vw, 3.5rem); }.offers-hero > p:not(.eyebrow) { max-width: 650px; margin-bottom: 2rem; }.eyebrow { color: #f3d77a; font-weight: 700; }.offers-section { padding: 5rem 2rem; }.offers-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }.offer-card { display: flex; flex-direction: column; align-items: flex-start; min-height: 260px; padding: 1.75rem; border: 1px solid #e2e8f0; border-radius: 12px; background: var(--white-color); box-shadow: 0 8px 20px rgba(10,36,99,.07); }.offer-tag { margin-bottom: 1rem; padding: .25rem .7rem; border-radius: 999px; color: var(--primary-color); background: #e8efff; font-size: .85rem; font-weight: 700; }.offer-card h3 { margin-bottom: .7rem; color: var(--primary-color); }.offer-card p { margin-bottom: 1.5rem; }.offer-card a { margin-top: auto; color: #197556; font-weight: 700; }.offers-note { max-width: 760px; margin: 2.5rem auto 0; text-align: center; color: #5d6775; }@media (max-width: 900px) { .offers-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }@media (max-width: 600px) { .offers-hero { min-height: 42vh; padding: 4rem 1.25rem; }.offers-section { padding: 4rem 1.25rem; }.offers-grid { grid-template-columns: 1fr; } }
+
+.offer-price {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 1rem !important;
+}
+.offer-price strong {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
 /* ================================
    قسم آراء العملاء (Testimonials)
    ================================ */
@@ -1278,4 +1298,189 @@ ul {
     .testimonials, .faq-section {
         padding: 3.5rem 1.25rem;
     }
+}
+
+/* ================================
+   شريط إشعار ملفات تعريف الارتباط (Cookie Consent)
+   ================================ */
+.cookie-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 998;
+    background: var(--secondary-color);
+    color: #eee;
+    padding: 1.1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    box-shadow: 0 -6px 20px rgba(0,0,0,0.2);
+    transform: translateY(100%);
+    transition: transform 0.5s var(--ease-smooth);
+}
+.cookie-banner.show {
+    transform: translateY(0);
+}
+.cookie-banner p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    max-width: 640px;
+    text-align: center;
+}
+.cookie-banner a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+.cookie-banner-actions {
+    display: flex;
+    gap: 0.7rem;
+    flex-shrink: 0;
+}
+.cookie-btn {
+    border: none;
+    cursor: pointer;
+    font-family: var(--main-font);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth), background 0.3s ease;
+}
+.cookie-btn-accept {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white-color);
+    box-shadow: 0 6px 15px rgba(10,36,99,0.3);
+}
+.cookie-btn-accept:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(10,36,99,0.4);
+}
+.cookie-btn-decline {
+    background: transparent;
+    color: #ccc;
+    border: 1px solid #666;
+}
+.cookie-btn-decline:hover {
+    color: var(--white-color);
+    border-color: #999;
+}
+
+@media (max-width: 600px) {
+    .cookie-banner {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ================================
+   شريط الاشتراك بالنشرة البريدية
+   ================================ */
+.newsletter-strip {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    padding: 3rem 2rem;
+}
+.newsletter-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.newsletter-text {
+    color: var(--white-color);
+    text-align: right;
+    flex: 1 1 260px;
+}
+.newsletter-text h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+}
+.newsletter-text p {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.85rem;
+}
+.newsletter-form {
+    display: flex;
+    gap: 0.6rem;
+    flex: 1 1 340px;
+    max-width: 420px;
+}
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 0.15rem 0.5rem;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--main-font);
+    font-size: 0.95rem;
+    background: rgba(255,255,255,0.95);
+    color: var(--secondary-color);
+}
+.newsletter-form input[type="email"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(217, 180, 74, 0.5);
+}
+.newsletter-form button {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.55rem 1.1rem;
+    border-radius: 50px;
+    font-family: var(--main-font);
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+}
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+@media (max-width: 300px) {
+    .newsletter-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .newsletter-text {
+        text-align: center;
+    }
+    .newsletter-form {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ================================
+   مبدّل اللغة (Language Switcher)
+   ================================ */
+.lang-switch {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.9rem !important;
+    border: 1.5px solid var(--primary-color);
+    border-radius: 50px;
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+    color: var(--primary-color) !important;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.lang-switch:hover {
+    background: var(--primary-color);
+    color: var(--white-color) !important;
+}
+.lang-switch::after {
+    display: none !important;
+}
+.nav-links .nav-social-mobile .lang-switch {
+    border-color: var(--white-color);
+    color: var(--white-color) !important;
 }

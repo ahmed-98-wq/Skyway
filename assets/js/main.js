@@ -79,6 +79,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- شريط إشعار ملفات تعريف الارتباط ---
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAccept = document.getElementById('cookie-accept');
+    const cookieDecline = document.getElementById('cookie-decline');
+
+    if (cookieBanner) {
+        const consent = localStorage.getItem('skyway_cookie_consent');
+
+        if (!consent) {
+            // نظهر الشريط بعد لحظة بسيطة حتى لا يتعارض مع شاشة التحميل
+            setTimeout(() => cookieBanner.classList.add('show'), 800);
+        }
+
+        function hideCookieBanner() {
+            cookieBanner.classList.remove('show');
+        }
+
+        if (cookieAccept) {
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('skyway_cookie_consent', 'accepted');
+                hideCookieBanner();
+            });
+        }
+
+        if (cookieDecline) {
+            cookieDecline.addEventListener('click', () => {
+                localStorage.setItem('skyway_cookie_consent', 'declined');
+                hideCookieBanner();
+            });
+        }
+    }
+
     // --- أكورديون الأسئلة الشائعة (FAQ) ---
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach((item) => {
